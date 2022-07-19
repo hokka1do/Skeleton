@@ -1,4 +1,4 @@
-package com.trello.Skeleton;
+package com.hokka1do.bookme;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -10,8 +10,10 @@ public class Professional {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    @Column
     private String firstName;
+    @Column
+    private String lastName;
 
     public String getFirstName() {
         return firstName;
@@ -21,7 +23,6 @@ public class Professional {
         this.firstName = firstName;
     }
 
-    @GetMapping("/getLastName")
     public String getLastName() {
         return lastName;
     }
@@ -29,6 +30,4 @@ public class Professional {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
-    private String lastName;
 }

@@ -1,11 +1,8 @@
 package com.hokka1do.bookme.professionals;
 
-import org.springframework.web.bind.annotation.GetMapping;
-
 import javax.persistence.*;
 
 @Entity
-@Table
 public class Professional {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,6 +11,27 @@ public class Professional {
     private String firstName;
     @Column
     private String lastName;
+
+    protected Professional() {
+    }
+
+    public Professional(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Professional{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
 
     public String getFirstName() {
         return firstName;

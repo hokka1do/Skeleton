@@ -1,18 +1,22 @@
 package com.hokka1do.bookme.professionals;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "PROFESSIONAL")
 public class Professional {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    @Column(name = "ID")
     private Long id;
-    @Column
+    @Column(name = "FIRST_NAME")
     private String firstName;
-    @Column
+    @Column(name = "LAST_NAME")
     private String lastName;
 
-    protected Professional() {
+    public Professional() {
     }
 
     public Professional(String firstName, String lastName) {
